@@ -1,6 +1,6 @@
 extends Node
 
-const INVENTORY_SIZE = 28 
+const INVENTORY_SIZE = 28 # 4 x 7 Grid
 
 var inventory : Array = []
 
