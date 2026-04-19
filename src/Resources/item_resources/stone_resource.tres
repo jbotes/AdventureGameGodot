@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://bcn6idrwb3fqi"]
+
+[ext_resource type="Script" uid="uid://dxa8kcivqlkif" path="res://Resources/item_resources/item_resource.gd" id="1_430iq"]
+[ext_resource type="Texture2D" uid="uid://cnk3k8dofw3h" path="res://Assets/textures/item_icons/stone.png" id="1_q5ufk"]
+
+[resource]
+script = ExtResource("1_430iq")
+item_key = 1
+display_name = "Stone Bitch"
+icon = ExtResource("1_q5ufk")
+metadata/_custom_type_script = "uid://dxa8kcivqlkif"

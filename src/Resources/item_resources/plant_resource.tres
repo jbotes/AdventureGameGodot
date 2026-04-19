@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://f8lwby8hhmme"]
+
+[ext_resource type="Texture2D" uid="uid://ccdm28hndakbe" path="res://Assets/textures/item_icons/plant.png" id="1_eq20n"]
+[ext_resource type="Script" uid="uid://dxa8kcivqlkif" path="res://Resources/item_resources/item_resource.gd" id="1_sl3yt"]
+
+[resource]
+script = ExtResource("1_sl3yt")
+item_key = 2
+display_name = "Plant Bitch"
+icon = ExtResource("1_eq20n")
+metadata/_custom_type_script = "uid://dxa8kcivqlkif"
