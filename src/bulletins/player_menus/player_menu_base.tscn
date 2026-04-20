@@ -223,6 +223,8 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_vkgwg")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_8u4li")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7ievx")
 shortcut = SubResource("Shortcut_7ievx")
+shortcut_feedback = false
+shortcut_in_tooltip = false
 icon = ExtResource("2_7h64j")
 expand_icon = true
 

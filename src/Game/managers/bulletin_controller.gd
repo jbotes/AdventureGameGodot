@@ -7,12 +7,13 @@ func _enter_tree() -> void:
 	EventSystem.BUL_create_bulletin.connect(create_bulletin)
 	EventSystem.BUL_destroy_bulletin.connect(destroy_bulletin)
 	
-func create_bulletin(key : BulletinConfig.Keys, extra_arg) -> void:
+func create_bulletin(key : BulletinConfig.Keys, extra_arg = null) -> void:
 	if bulletins.has(key):
 		return
 	
-	var new_bulletin := BulletinConfig.get_bulletin(key)
-	new_bulletin.initialize(extra_arg)
+	var new_bulletin := BulletinConfig.get_bulletin(key)	
+	if extra_arg != null:
+		new_bulletin.initialize(extra_arg)
 	add_child(new_bulletin)
 	bulletins[key] = new_bulletin
 	
