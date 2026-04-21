@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://yeuqkaaqe16i" path="res://bulletins/player_menus/player_menu_base.tscn" id="1_ghr5s"]
 
 [node name="CraftingMenu" instance=ExtResource("1_ghr5s")]
+
+[node name="Label" parent="MarginContainer/HBoxtContainer/VBoxContainer/UtilityNinePatchRect/MarginContainer/VBoxContainer/NinePatchRect" index="0"]
+text = "Crafting"
