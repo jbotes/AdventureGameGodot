@@ -8,4 +8,5 @@ script = ExtResource("1_sl3yt")
 item_key = 2
 display_name = "Plant Bitch"
 icon = ExtResource("1_eq20n")
+description = "a green plant bitch"
 metadata/_custom_type_script = "uid://dxa8kcivqlkif"

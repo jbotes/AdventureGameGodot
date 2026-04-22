@@ -7,4 +7,6 @@
 script = ExtResource("1_gwyjr")
 display_name = "Stick"
 icon = ExtResource("1_q6bjc")
+description = "a rotten wrecthed piece of stick
+not worthy of sticknation"
 metadata/_custom_type_script = "uid://dxa8kcivqlkif"

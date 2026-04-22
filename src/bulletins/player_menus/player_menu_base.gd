@@ -12,7 +12,7 @@ func _ready() -> void:
 	EventSystem.INV_ask_update_inventory.emit()
 	
 	for inventory_slot in inventory_container.get_children():
-		inventory_slot.mouse_entered.connect(show_item_info.bind(inventory_slot.item_key))
+		inventory_slot.mouse_entered.connect(show_item_info.bind(inventory_slot))
 		inventory_slot.mouse_exited.connect(hide_item_info)
 	
 func close() -> void:
@@ -20,10 +20,14 @@ func close() -> void:
 	EventSystem.BUL_destroy_bulletin.emit(BulletinConfig.Keys.CraftingMenu)
 	EventSystem.PLA_unfreeze_player.emit()
 
-func show_item_info(item_key : ItemConfig.Keys) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and item_key == null:
+func show_item_info(inventory_slot : InventorySlot) -> void:
+	var item_key = inventory_slot.item_key
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) or item_key == null:
 		return
-	item_description_label.text = ItemConfig.get_item_resource(item_key).display_name
+	
+	var item_resource := ItemConfig.get_item_resource(item_key)
+	
+	item_description_label.text = item_resource.display_name + "\n" + item_resource.description
 	
 func hide_item_info() -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):

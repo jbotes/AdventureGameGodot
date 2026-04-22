@@ -8,4 +8,6 @@ script = ExtResource("1_430iq")
 item_key = 1
 display_name = "Stone Bitch"
 icon = ExtResource("1_q5ufk")
+description = "a stone used in biblical
+stoning rituals"
 metadata/_custom_type_script = "uid://dxa8kcivqlkif"
