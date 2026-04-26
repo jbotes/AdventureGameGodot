@@ -59,5 +59,7 @@ func update_inventory(inventory : Array) -> void:
 		crafting_button.button.disabled = disable_button
 				
 	
-func crafting_button_pressed(item_key : ItemConfig.Keys) -> void:
+func crafting_button_pressed(item_key : ItemConfig.Keys) -> void:	
+	EventSystem.INV_delete_crafting_blueprint_costs.emit(ItemConfig.get_crafting_blueprint_resource(item_key).costs)
 	EventSystem.INV_add_item.emit(item_key)
+	
