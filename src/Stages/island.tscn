@@ -41,6 +41,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2838359, -0.033175223, -2.
 [node name="PickuppableStone" parent="." instance=ExtResource("2_dt106")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6783872, 0.032987505, -3.700834)
 
+[node name="PickuppablePlant2" parent="." instance=ExtResource("7_8lcsj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4088576, -0.1697619, -1.1232543)
+
+[node name="PickuppablePlant3" parent="." instance=ExtResource("7_8lcsj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4088576, -0.1697619, 0.35981917)
+
+[node name="PickuppablePlant4" parent="." instance=ExtResource("7_8lcsj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.202475, -0.1697619, -2.2872367)
+
 [node name="Terrain" parent="." instance=ExtResource("3_ld765")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43970823, -0.048577785, 0.10132885)
 
@@ -80,4 +89,5 @@ environment = SubResource("Environment_76wv5")
 [node name="Player" parent="." instance=ExtResource("6_4x32u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1827817, 1.3923452, 0)
 
-[node name="PickuppableTemplate" parent="." instance=ExtResource("7_8lcsj")]
+[node name="PickuppablePlant" parent="." instance=ExtResource("7_8lcsj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4088576, -0.1697619, -3.0911546)
