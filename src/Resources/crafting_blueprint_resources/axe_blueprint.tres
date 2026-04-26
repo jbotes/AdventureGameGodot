@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CraftingBlueprintResource" load_steps=6 format=3 uid="uid://bcndi2oisae0a"]
+
+[ext_resource type="Script" uid="uid://b56f7lpbaam2k" path="res://Resources/crafting_blueprint_resources/blueprint_cost_data.gd" id="1_32b0o"]
+[ext_resource type="Script" uid="uid://bey6k2wnp2otw" path="res://Resources/crafting_blueprint_resources/crafting_blueprint_resource.gd" id="2_ffc1i"]
+
+[sub_resource type="Resource" id="Resource_32b0o"]
+script = ExtResource("1_32b0o")
+metadata/_custom_type_script = "uid://b56f7lpbaam2k"
+
+[sub_resource type="Resource" id="Resource_ffc1i"]
+script = ExtResource("1_32b0o")
+item_key = 1
+metadata/_custom_type_script = "uid://b56f7lpbaam2k"
+
+[sub_resource type="Resource" id="Resource_tcusr"]
+script = ExtResource("1_32b0o")
+item_key = 14
+metadata/_custom_type_script = "uid://b56f7lpbaam2k"
+
+[resource]
+script = ExtResource("2_ffc1i")
+costs = Array[ExtResource("1_32b0o")]([SubResource("Resource_32b0o"), SubResource("Resource_ffc1i"), SubResource("Resource_tcusr")])
+metadata/_custom_type_script = "uid://bey6k2wnp2otw"

@@ -41,8 +41,18 @@ const CRAFTABLE_ITEM_KEYS : Array[Keys] = [
 const ITEM_RESOURCE_PATHS := {
 	Keys.Stick : "res://Resources/item_resources/stick_resource.tres",
 	Keys.Stone : "res://Resources/item_resources/stone_resource.tres",
-	Keys.Plant : "res://Resources/item_resources/plant_resource.tres"
+	Keys.Plant : "res://Resources/item_resources/plant_resource.tres",
+	Keys.Axe : "res://Resources/item_resources/axe_resource.tres",
+	Keys.Rope : "res://Resources/item_resources/rope_resource.tres"
 }
 
 static func get_item_resource(key : Keys) -> ItemResource:
 	return load(ITEM_RESOURCE_PATHS.get(key))
+	
+const CRAFTING_BLUEPRINT_RESOURCE_PATHS := {
+	Keys.Axe : "res://Resources/crafting_blueprint_resources/axe_blueprint.tres",
+	Keys.Rope : "res://Resources/crafting_blueprint_resources/rope_blueprint.tres"
+}
+
+static func get_crafting_blueprint_resource(key : Keys) -> CraftingBlueprintResource:
+	return load(CRAFTING_BLUEPRINT_RESOURCE_PATHS.get(key))
