@@ -10,4 +10,5 @@ display_name = "Axe Motherfcker"
 icon = ExtResource("1_cdtwe")
 description = "a golden axe mother bitch
 "
+is_equippable = true
 metadata/_custom_type_script = "uid://dxa8kcivqlkif"

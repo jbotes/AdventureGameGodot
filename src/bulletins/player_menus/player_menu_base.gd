@@ -5,7 +5,7 @@ class_name PlayerMenuBase
 @onready var item_description_label: Label = %ItemDescriptionLabel
 @onready var  item_extra_info_label : Label = %ItemExtraInfoLabel
 
-func _enter_tree() -> void:
+func _enter_tree() -> void:	
 	EventSystem.INV_inventory_updated.connect(update_inventory)
 
 func _ready() -> void:
@@ -16,6 +16,10 @@ func _ready() -> void:
 	for inventory_slot in inventory_container.get_children():
 		inventory_slot.mouse_entered.connect(show_item_info.bind(inventory_slot))
 		inventory_slot.mouse_exited.connect(hide_item_info)
+	
+	for Hotbar_slot in get_tree().get_nodes_in_group("HotbarSlots"):
+		Hotbar_slot.mouse_entered.connect(show_item_info.bind(Hotbar_slot))
+		Hotbar_slot.mouse_exited.connect(hide_item_info)
 	
 func close() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
