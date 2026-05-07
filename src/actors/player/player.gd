@@ -69,3 +69,6 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		
 	elif event.is_action_pressed("open_crafting_menu"):
 		EventSystem.BUL_create_bulletin.emit(BulletinConfig.Keys.CraftingMenu)
+		
+	elif event.is_action_pressed("item_hotkey"):
+		EventSystem.EQU_hotkey_pressed.emit(int(event.as_text())) #this gives you the number 1 to 9
