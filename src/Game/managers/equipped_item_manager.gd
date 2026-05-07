@@ -28,3 +28,4 @@ func hotbar_pressed(hotkey : int) -> void:
 	else:
 		active_hotbar_slot = null
 		EventSystem.EQU_unequip_item.emit()
+		EventSystem.EQU_active_hotbar_slot_updated.emit(null)
