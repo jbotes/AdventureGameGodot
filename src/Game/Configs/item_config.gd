@@ -42,7 +42,7 @@ const ITEM_RESOURCE_PATHS := {
 	Keys.Stick : "res://Resources/item_resources/stick_resource.tres",
 	Keys.Stone : "res://Resources/item_resources/stone_resource.tres",
 	Keys.Plant : "res://Resources/item_resources/plant_resource.tres",
-	Keys.Axe : "res://Resources/item_resources/axe_resource.tres",
+	Keys.Axe : "res://Resources/item_resources/axe_item_resource.tres",
 	Keys.Rope : "res://Resources/item_resources/rope_resource.tres"
 }
 

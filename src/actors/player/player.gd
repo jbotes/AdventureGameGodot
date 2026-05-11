@@ -8,6 +8,7 @@ extends CharacterBody3D
 
 @onready var head: Node3D = $Head
 @onready var interaction_ray_cast := $Head/InteractionRayCast
+@onready var equippable_item_holder := $Head/EquippableItemHolder
 
 func _enter_tree() -> void:
 	EventSystem.PLA_freeze_player.connect(set_freeze.bind(true))
@@ -28,6 +29,9 @@ func _process(delta: float) -> void:
 #60fps this physics process runs every frame
 func _physics_process(delta: float) -> void:
 	move()
+	
+	if Input.is_action_just_pressed("use_item"):
+		equippable_item_holder.try_and_use_item()
 	
 func move() -> void:
 	# check if on the floor
