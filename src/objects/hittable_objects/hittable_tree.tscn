@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv0hx4m0d5q36"]
+
+[ext_resource type="PackedScene" uid="uid://5g73p6gb0a2n" path="res://objects/hittable_objects/hittable_object_template.tscn" id="1_2ec3t"]
+[ext_resource type="PackedScene" uid="uid://b2l8dfxgnl744" path="res://Assets/meshes/tree.tscn" id="2_qqeto"]
+
+[node name="HittableTree" instance=ExtResource("1_2ec3t")]
+
+[node name="Tree" parent="." index="3" instance=ExtResource("2_qqeto")]
