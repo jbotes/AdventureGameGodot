@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce42acpqyobqp"]
+[gd_scene load_steps=8 format=3 uid="uid://ce42acpqyobqp"]
 
 [ext_resource type="Script" uid="uid://c6rut802ybw5f" path="res://actors/player/player.gd" id="1_nvxhs"]
+[ext_resource type="Script" uid="uid://7cbgrl6l7y8i" path="res://actors/player/main_camera.gd" id="2_15y17"]
 [ext_resource type="Script" uid="uid://nagscqgqwvbv" path="res://actors/player/interaction_ray_cast.gd" id="2_ilk7j"]
 [ext_resource type="Script" uid="uid://p1cu04m01il" path="res://actors/player/equippable_item_holder.gd" id="3_6p1w3"]
 [ext_resource type="Script" uid="uid://bf374137ud3v" path="res://Game/managers/inventory_manager.gd" id="3_ax26v"]
@@ -20,8 +21,10 @@ shape = SubResource("CapsuleShape3D_6uhly")
 
 [node name="Head" type="Node3D" parent="."]
 
-[node name="Camera3D" type="Camera3D" parent="Head"]
+[node name="MainCamera" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049622416, 0.67438287, -0.0037157536)
+cull_mask = 1048573
+script = ExtResource("2_15y17")
 
 [node name="InteractionRayCast" type="RayCast3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036084205, 0.6601992, -0.34927595)
@@ -30,7 +33,28 @@ collision_mask = 4
 collide_with_areas = true
 script = ExtResource("2_ilk7j")
 
-[node name="EquippableItemHolder" type="Node3D" parent="Head"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Head"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Head/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+gui_disable_input = true
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="EquippableItemCamera" type="Camera3D" parent="Head/SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+cull_mask = 1048574
+
+[node name="EquippableItemHolder" type="Node3D" parent="Head/SubViewportContainer/SubViewport/EquippableItemCamera"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.76, 0)
 script = ExtResource("3_6p1w3")
 
 [node name="Managers" type="Node" parent="."]

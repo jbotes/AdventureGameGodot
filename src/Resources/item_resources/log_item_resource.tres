@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://cj5fpdw18rhsh"]
+
+[ext_resource type="Texture2D" uid="uid://dd7nlr3t3p144" path="res://Assets/textures/item_icons/log.png" id="1_ncy4c"]
+[ext_resource type="Script" uid="uid://dxa8kcivqlkif" path="res://Resources/item_resources/item_resource.gd" id="2_girra"]
+
+[resource]
+script = ExtResource("2_girra")
+item_key = 5
+display_name = "Logs"
+icon = ExtResource("1_ncy4c")
+description = "bunnch of logs for ye 
+matey!"
+metadata/_custom_type_script = "uid://dxa8kcivqlkif"
