@@ -18,3 +18,6 @@ signal EQU_hotkey_pressed
 signal EQU_equip_item
 signal EQU_unequip_item
 signal EQU_active_hotbar_slot_updated
+
+#Spawning signals
+signal SPA_spawn_scene
