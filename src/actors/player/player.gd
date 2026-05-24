@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var jump_velocity := 4.0
 @export var gravity := 0.2
 @export var mouse_sensitivity := 0.005
-@export var walking_energy_change_per_1m := -0.05
+@export var walking_energy_change_per_1m := -0.5
 
 @onready var head: Node3D = $Head
 @onready var interaction_ray_cast : RayCast3D = $Head/InteractionRayCast

@@ -20,7 +20,10 @@ func equip_item(item_key : ItemConfig.Keys) -> void:
 	
 	if item_scene is EquippableWeapon:
 		item_scene.weapon_item_resource = ItemConfig.get_item_resource(item_key)
-		
+	
+	elif item_scene is EquippableConsumable:
+		item_scene.consumable_item_resource = ItemConfig.get_item_resource(item_key)
+	
 	add_child(item_scene)
 	current_item_scene = item_scene
 		

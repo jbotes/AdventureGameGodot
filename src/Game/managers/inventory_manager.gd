@@ -12,6 +12,7 @@ func _enter_tree() -> void:
 	EventSystem.INV_switch_two_item_indexes.connect(switch_two_item_indexes)
 	EventSystem.INV_add_item.connect(add_item)
 	EventSystem.INV_delete_crafting_blueprint_costs.connect(delete_crafting_blueprint_costs)
+	EventSystem.INV_delete_item_by_index.connect(delete_item_by_index)
 
 func _ready() -> void:
 	inventory.resize(INVENTORY_SIZE)
@@ -71,4 +72,10 @@ func delete_item(item_key : ItemConfig.Keys) -> void:
 	
 	inventory[inventory.rfind(item_key)] = null #this gets rid of the last number of an array
 	
-	
+func delete_item_by_index(index : int, is_in_hotbar : bool) -> void:
+	if is_in_hotbar:
+		hotbar[index] = null
+		send_hotbar()
+	else:
+		inventory[index] = null
+		send_inventory()

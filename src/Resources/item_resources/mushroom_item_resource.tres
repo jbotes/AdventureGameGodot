@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ConsumableItemResource" load_steps=3 format=3 uid="uid://cxtp7dk5lksa4"]
+
+[ext_resource type="Texture2D" uid="uid://dkfwyb447cfdd" path="res://Assets/textures/item_icons/mushroom.png" id="1_fpvuk"]
+[ext_resource type="Script" uid="uid://dc1vdth5t0wwv" path="res://Resources/item_resources/consumable_item_resource.gd" id="1_vjuh2"]
+
+[resource]
+script = ExtResource("1_vjuh2")
+health_change = -5.0
+item_key = 3
+display_name = "Mushroom"
+icon = ExtResource("1_fpvuk")
+description = "n freaky shroom"
+metadata/_custom_type_script = "uid://dc1vdth5t0wwv"
