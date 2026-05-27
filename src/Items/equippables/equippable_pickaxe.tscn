@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbdpxx7gjtpge"]
+
+[ext_resource type="PackedScene" uid="uid://dlmnngi12ac7c" path="res://Items/equippables/equippable_weapon_template.tscn" id="1_c7phu"]
+[ext_resource type="PackedScene" uid="uid://mlumtpxoi8hs" path="res://Assets/meshes/pickaxe.tscn" id="3_kymo2"]
+
+[sub_resource type="Animation" id="Animation_ylsbm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshHolder/Pickaxe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.339361, 0.22901225, -0.35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshHolder/Pickaxe:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_runri"]
+resource_name = "use_item"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshHolder/Pickaxe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.1984524, 0.29976028, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.339361, 0.22901225, -0.35), Vector3(0.064, 0.304, -0.905), Vector3(0.489, 0.019, -0.615), Vector3(0.489, 0.019, -0.615), Vector3(0.339361, 0.22901225, -0.35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshHolder/Pickaxe:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.09853231, 0.1984524, 0.29976028, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.7417649, 0.38048178, 0), Vector3(-1.0803589, -0.27052602, -0.06806784), Vector3(-1.0803589, -0.27052602, -0.06806784), Vector3(0, 0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"change_energy"
+}, {
+"args": [],
+"method": &"check_hit"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xrj8a"]
+_data = {
+&"RESET": SubResource("Animation_ylsbm"),
+&"use_item": SubResource("Animation_runri")
+}
+
+[node name="EquippablePickAxe" instance=ExtResource("1_c7phu")]
+
+[node name="AnimationPlayer" parent="." index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_xrj8a")
+}
+
+[node name="Pickaxe" parent="MeshHolder" index="0" instance=ExtResource("3_kymo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.339361, 0.22901225, -0.35)
