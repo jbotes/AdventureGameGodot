@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://br70vovv8hbmj"]
+
+[ext_resource type="Texture2D" uid="uid://dwgf11ql63hj7" path="res://Assets/textures/item_icons/coal.png" id="1_oxbn4"]
+[ext_resource type="Script" uid="uid://dxa8kcivqlkif" path="res://Resources/item_resources/item_resource.gd" id="2_heqp8"]
+
+[resource]
+script = ExtResource("2_heqp8")
+item_key = 6
+display_name = "Coal  Bitch"
+icon = ExtResource("1_oxbn4")
+description = "brutal eskom coal
+from mother russia"
+metadata/_custom_type_script = "uid://dxa8kcivqlkif"

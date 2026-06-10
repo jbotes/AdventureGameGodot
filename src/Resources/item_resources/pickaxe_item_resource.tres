@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponItemResource" load_steps=3 format=3 uid="uid://d3kee8f2arnv6"]
+
+[ext_resource type="Texture2D" uid="uid://dd7dbc3a1actn" path="res://Assets/textures/item_icons/pickaxe.png" id="1_iym4v"]
+[ext_resource type="Script" uid="uid://w5q6b64egbku" path="res://Resources/item_resources/weapon_item_resource.gd" id="2_ogqgg"]
+
+[resource]
+script = ExtResource("2_ogqgg")
+item_key = 11
+display_name = "Pickaxe"
+icon = ExtResource("1_iym4v")
+description = "i mean DIY Pick Axe BABE !"
+is_equippable = true
+metadata/_custom_type_script = "uid://w5q6b64egbku"

@@ -1,27 +1,27 @@
 [gd_scene load_steps=5 format=3 uid="uid://vap8hr26ordt"]
 
 [ext_resource type="PackedScene" uid="uid://c625gxh6yh0ng" path="res://Items/Iteractables/rigid_pickuppable_template.tscn" id="1_e5ali"]
-[ext_resource type="PackedScene" uid="uid://dnh521crh2u7n" path="res://Assets/meshes/log.tscn" id="2_ia4px"]
+[ext_resource type="PackedScene" uid="uid://dq7f3eioifi00" path="res://Assets/meshes/coal.tscn" id="2_ia4px"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_msrmx"]
-height = 0.9616699
-radius = 0.13964844
+[sub_resource type="SphereShape3D" id="SphereShape3D_msrmx"]
+radius = 0.096329965
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fkao8"]
-points = PackedVector3Array(0.0079482645, -0.49870658, 0.13636813, -0.11651788, -0.49831414, 0.06552726, -0.096267164, -0.49841225, -0.04872542, 0.09680345, -0.49870658, 0.061676636, 0.11804145, -0.49870658, 0.07280651, -0.0006387755, 0.503556, 0.117246896, -0.10076732, 0.49992603, 0.06394482, -0.11651788, -0.49831414, -0.061595984, -0.11373972, 0.1868661, 0.0544765, -0.11504844, 0.18755287, -0.07074781, -0.0022230148, -0.4960577, -0.115214564, 0.10787017, -0.4960577, -0.051652946, 0.1098677, -0.17102873, -0.059855297, 0.11037282, 0.49992603, -0.063178435, 0.109454416, 0.503556, 0.053685278, 0.0007388294, 0.50031847, -0.10308247, -0.08051661, 0.50031847, -0.05196943, -0.10076732, 0.49992603, -0.063178435, -0.004541971, 0.17499518, -0.13304347, 0.00027962774, 0.49992603, -0.12674005, 0.0044353902, -0.17102873, -0.12072676)
+points = PackedVector3Array(0.001142934, -0.07938762, -0.028417535, -0.07884047, -0.035493463, -0.056093417, -0.016327731, -0.009641059, -0.10030921, 0.08732826, -0.032952853, 0.0027323067, 0.037515484, -0.05097744, 0.09189728, -0.07879113, -0.05839327, 0.043416232, -0.08073231, 0.036021225, -0.021662615, -0.041744098, 0.054938465, -0.08882584, 0.031214856, 0.057324573, -0.07091565, 0.06263573, 0.062062457, 0.050093964, -0.00489448, 0.020794742, 0.096857324, 0.002343841, 0.09598301, 0.008966133)
 
-[node name="RigidPickuppableLog" instance=ExtResource("1_e5ali")]
-collision_layer = 16
+[node name="RigidPickuppableCoal" instance=ExtResource("1_e5ali")]
+collision_layer = 32
+collision_mask = 113
 
 [node name="Pickuppable" parent="." index="0"]
-item_key = 5
-prompt = "Pick up the damn log boy"
+item_key = 6
+prompt = "Pick up the dirty russian coal"
 
 [node name="CollisionShape3D" parent="Pickuppable" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.017700195, 0)
-shape = SubResource("CylinderShape3D_msrmx")
+transform = Transform3D(0.9990679, -0.04316603, 0, 0.04316603, 0.9990679, 0, 0, 0, 1, -0.0011409223, -0.0077123195, 0.0026035234)
+shape = SubResource("SphereShape3D_msrmx")
 
-[node name="Log" parent="." index="1" instance=ExtResource("2_ia4px")]
+[node name="Coal" parent="." index="1" instance=ExtResource("2_ia4px")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
 shape = SubResource("ConvexPolygonShape3D_fkao8")
