@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://nkujvgh0ckg3"]
+
+[ext_resource type="Texture2D" uid="uid://cnqrc2q6p1eje" path="res://Assets/textures/item_icons/raw_meat.png" id="1_oau5s"]
+[ext_resource type="Script" uid="uid://dxa8kcivqlkif" path="res://Resources/item_resources/item_resource.gd" id="2_7qsna"]
+
+[resource]
+script = ExtResource("2_7qsna")
+item_key = 8
+display_name = "Raw Meat"
+icon = ExtResource("1_oau5s")
+description = "some raw meat
+for the fire"
+metadata/_custom_type_script = "uid://dxa8kcivqlkif"

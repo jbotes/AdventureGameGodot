@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+const ANIM_BLEND = 0.2
 #state machine for the animal
 
 enum States {
@@ -15,7 +16,7 @@ var state := States.Idle
 @onready var dissappear_after_death_timer: Timer = %DissappearAfterDeathTimer
 
 
-@onready var main_collision_shape_3d: CollisionShape3D = $CollisionShape3D
+@onready var main_collision_shape: CollisionShape3D = $CollisionShape3D #main_collision_shape_3d
 @onready var meat_spawn_marker: Marker3D = $MeatSpawnMarker
 
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
@@ -37,7 +38,7 @@ func _ready() -> void:
 	
 func animation_finished(_anim_name: String) -> void:
 	if state == States.Idle:
-		animation_player.play(idle_animations.pick_random())
+		animation_player.play(idle_animations.pick_random(), ANIM_BLEND)
 
 func _physics_process(_delta: float) -> void:
 	if state == States.Wander:
@@ -69,9 +70,25 @@ func set_state(new_state : States) -> void:
 	match state:
 		States.Idle:
 			idle_timer.start(randf_range(min_idle_time, max_idle_time))
-			animation_player.play(idle_animations.pick_random())
+			animation_player.play(idle_animations.pick_random(), ANIM_BLEND)
 			
 		States.Wander:
 			pick_wander_velocity()
 			wander_timer.start(randf_range(min_wander_time, max_wander_time))
-			animation_player.play("Walk")
+			animation_player.play("Walk", ANIM_BLEND)
+			
+		States.Dead:
+			animation_player.play("Death", ANIM_BLEND)
+			main_collision_shape.disabled = true
+			var meat_scene := ItemConfig.get_pickuppable_item(ItemConfig.Keys.RawMeat)
+			EventSystem.SPA_spawn_scene.emit(meat_scene, meat_spawn_marker.global_transform)
+			idle_timer.stop()
+			wander_timer.stop()
+			set_physics_process(false)
+			dissappear_after_death_timer.start(10)
+
+func take_hit(weapon_item_resource : WeaponItemResource) -> void:
+	health -= weapon_item_resource.damage
+	
+	if state != States.Dead and health <= 0:
+		set_state(States.Dead)
