@@ -18,7 +18,6 @@ var state := States.Idle
 
 @onready var main_collision_shape: CollisionShape3D = $CollisionShape3D #main_collision_shape_3d
 @onready var meat_spawn_marker: Marker3D = $MeatSpawnMarker
-
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 
 
@@ -56,10 +55,10 @@ func pick_wander_velocity() -> void:
 	velocity = Vector3(dir.x, 0 ,dir.y) * normal_speed
 	
 func _on_idle_timer_timeout() -> void:
-	set_state(States.Idle)
+	set_state(States.Wander)
 
 func _on_wander_timer_timeout() -> void:
-	set_state(States.Wander)
+	set_state(States.Idle)
 
 func _on_dissappear_after_death_timer_timeout() -> void:
 	queue_free()
