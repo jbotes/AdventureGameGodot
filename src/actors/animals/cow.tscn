@@ -9,8 +9,8 @@ radius = 0.31054688
 height = 1.6514629
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tt4e2"]
-radius = 0.41455078
-height = 2.3006592
+radius = 0.6333008
+height = 2.6727905
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dr81s"]
 resource_name = "Main"
@@ -4641,7 +4641,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0
 shape = SubResource("CapsuleShape3D_061kr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" index="0"]
-transform = Transform3D(0.9947028, -0.101936385, 0.013239225, 0, -0.1287956, -0.99167114, 0.10279253, 0.98641807, -0.12811334, -0.038326263, 0.98245007, -0.22186531)
+transform = Transform3D(0.9947028, -0.101936385, 0.013239225, 0, -0.1287956, -0.99167114, 0.10279253, 0.98641807, -0.12811334, -0.057293124, 0.9584856, -0.03832677)
 shape = SubResource("CapsuleShape3D_tt4e2")
 
 [node name="MeatSpawnMarker" parent="." index="3"]
