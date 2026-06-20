@@ -54,7 +54,7 @@ func _physics_process(_delta: float) -> void:
 	if state == States.Wander:
 		wander_loop()
 		
-	elif state == States.Wander:
+	elif state == States.Flee:
 		flee_loop()
 
 func wander_loop() -> void:
